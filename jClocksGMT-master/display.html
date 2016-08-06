@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>jClocksGMT v. 2.0</title>
+
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+        
+        <link rel="stylesheet" href="css/jClocksGMT.css">
+        
+        <style>
+            body { font-family: Arial, sans-serif; }
+        </style>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+        <script src="js/jClocksGMT.js"></script>
+        <script src="js/jquery.rotate.js"></script>
+
+
+    </head>
+    <body>
+		<div id="selectBox">
+			<select id="box1" onChange="changeBox();">
+					
+					<option selected="selected" value="+5.5GMTNew Delhi, India">New Delhi, India<option>
+					<option value="-12GMTEniwetok">Eniwetok<option>
+					<option value="-11GMTSamoa">Samoa<option>
+					<option value="-10GMTHawaii">Hawaii<option>
+					<option value="-9GMTAlaska">Alaska<option>
+					<option value="-8GMTPST, Pacific US">PST, Pacific US<option>
+					<option value="-7GMTMST, Mountain US">MST, Mountain US<option>
+					<option value="-6GMTCST, Central US">CST, Central US<option>
+					<option value="-5GMTEST, Eastern US">EST, Eastern US<option>
+					<option value="-4GMTAtlantic, Canada">Atlantic, Canada<option>
+					<option value="-3GMTBrazilia, Buenos Aries">Brazilia, Buenos Aries<option>
+					<option value="-2GMTMid-Atlantic">Mid-Atlantic<option>
+					<option value="-1GMTCape Verdes">Cape Verdes<option>
+					<option value=" 0GMTGreenwich Mean Time">Greenwich Mean Time<option>
+					<option value="+1GMTBerlin, Rome">Berlin, Rome<option>
+					<option value="+2GMTIsrael, Cairo">Israel, Cairo<option>
+					<option value="+3GMTMoscow, Kuwait">Moscow, Kuwait<option>
+					<option value="+7GMTAbu Dhabi, Muscat">Abu Dhabi, Muscat<option>
+					<option value="+5GMTIslamabad, Karachi">Islamabad, Karachi<option>
+					<option value="+6GMTAlmaty, Dhaka">Almaty, Dhaka<option>
+					<option value="+7GMTBangkok, Jakarta">Bangkok,Jakarta<option>
+					<option value="+8GMTHong Kong, Beijing">Hong Kong, Beijing<option>
+					<option value="+9GMTTokyo, Osaka">Tokyo, Osaka   <option>
+					<option value="+10GMTSydney, Melbourne, Guam">Sydney, Melbourne, Guam<option>
+					<option value="+11GMTMagadan, Soloman Is.">Magadan, Soloman Is.<option>
+					<option value="+12GMTFiji, Wellington, Auckland">Fiji, Wellington, Auckland<option>
+			</select>
+		</div>
+        <div id="clock"></div>
+		
+		
+		  
+		
+        
+        <script>
+           // $(document).ready(function(){
+
+               /* $('#clock_hou').jClocksGMT(
+                {
+                    title: 'Houston, TX, USA', 
+                    offset: '-6'
+                });*/
+
+               /* $('#clock_india').jClocksGMT(
+                {
+                    title: 'New Delhi, India', 
+                    offset: '+5.5', 
+                    dst: false, 
+                    skin: 2, 
+                    timeformat: 'HH:mm'
+                });
+
+                $('#clock_korea').jClocksGMT(
+                {
+                    title: 'Seoul, S. Korea', 
+                    offset: '+8', 
+                    skin: 3, 
+                    date: true
+                });
+
+                $('#clock_uk').jClocksGMT(
+                {   
+                    date: true, 
+                    dateformat: 'YYYY/MM/DD', 
+                    skin: 4
+                });
+
+                $('#clock_tokyo').jClocksGMT(
+                {
+                    title: 'Tokyo, Japan',
+                    offset: '+9',
+                    skin: 5
+                });
+				*/
+				count = 0;
+				function changeBox()
+				{
+					
+					document.getElementById ("clock").innerHTML = "";
+					valueOfselectedOption = document.getElementById ("box1").value;
+					var res = valueOfselectedOption.split("GMT"); 
+					title = res[1];
+					offset = res[0];
+					console.log (title);
+					$('#clock').jClocksGMT({ title: title, offset: offset, skin: 1 });
+					document.getElementById ("box1").value = "";
+
+					if (count > 0)
+					{
+						alert ("Refresh and Select Again");
+						location.reload();
+					}
+					count++;					
+				}
+
+           // });
+			
+        </script>
+
+    </body>
+</html>
