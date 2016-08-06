@@ -1,3 +1,3 @@
 AnalogClock in javascript
 
-Execute display.html
+Execute {ServerName}/AnalogClock/jClocksGMT-master/display.html
