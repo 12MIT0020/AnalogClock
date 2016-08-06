@@ -1,3 +1,3 @@
-AnalogClock
+AnalogClock in javascript
 
 Execute display.html
